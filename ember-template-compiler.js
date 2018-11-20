@@ -5,7 +5,7 @@
  *            Portions Copyright 2008-2011 Apple Inc. All rights reserved.
  * @license   Licensed under MIT license
  *            See https://raw.github.com/emberjs/ember.js/master/LICENSE
- * @version   1.13.10-zenefits.1
+ * @version   1.13.10-zenefits.2+0bf61c69
  */
 
 (function() {
@@ -3303,7 +3303,7 @@ enifed('ember-metal/core', ['exports'], function (exports) {
   
     @class Ember
     @static
-    @version 1.13.10-zenefits.1
+    @version 1.13.10-zenefits.2+0bf61c69
     @public
   */
 
@@ -3337,11 +3337,11 @@ enifed('ember-metal/core', ['exports'], function (exports) {
   
     @property VERSION
     @type String
-    @default '1.13.10-zenefits.1'
+    @default '1.13.10-zenefits.2+0bf61c69'
     @static
     @public
   */
-  Ember.VERSION = '1.13.10-zenefits.1';
+  Ember.VERSION = '1.13.10-zenefits.2+0bf61c69';
 
   /**
     The hash of environment variables used to control various configuration
@@ -12632,7 +12632,7 @@ enifed("ember-template-compiler/system/compile_options", ["exports", "ember-meta
 
     options.buildMeta = function buildMeta(program) {
       return {
-        revision: 'Ember@1.13.10-zenefits.1',
+        revision: 'Ember@1.13.10-zenefits.2+0bf61c69',
         loc: program.loc,
         moduleName: options.moduleName
       };
@@ -19141,8 +19141,8 @@ enifed('morph-range', ['exports', './morph-range/utils'], function (exports, _mo
           return this.setNode(content);
         }
         /* Handlebars.SafeString */
-        if (typeof content.string === 'string') {
-          return this.setHTML(content.string);
+        if (typeof content.toHTML === 'function') {
+          return this.setHTML(content.toHTML());
         }
         if (this.parseTextAsHTML) {
           return this.setHTML(content.toString());
