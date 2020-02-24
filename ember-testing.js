@@ -5,7 +5,7 @@
  *            Portions Copyright 2008-2011 Apple Inc. All rights reserved.
  * @license   Licensed under MIT license
  *            See https://raw.github.com/emberjs/ember.js/master/LICENSE
- * @version   1.13.10-zenefits.2+0bf61c69
+ * @version   1.13.10-zenefits.2+aba3a1d5
  */
 
 (function() {
@@ -223,6 +223,9 @@ enifed("ember-debug", ["exports", "ember-metal/core", "ember-metal/error", "embe
     @public
   */
   _emberMetalCore["default"].deprecate = function (message, test, options) {
+    if (!_emberMetalCore["default"].ENV.LOG_DEPRECATIONS) {
+      return;
+    }
     if (_emberMetalCore["default"].ENV.RAISE_ON_DEPRECATION) {
       _emberDebugDeprecationManager["default"].setDefaultLevel(_emberDebugDeprecationManager.deprecationLevels.RAISE);
     }
