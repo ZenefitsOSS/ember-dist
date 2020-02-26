@@ -223,7 +223,7 @@ enifed("ember-debug", ["exports", "ember-metal/core", "ember-metal/error", "embe
     @public
   */
   _emberMetalCore["default"].deprecate = function (message, test, options) {
-    if (!_emberMetalCore["default"].ENV.LOG_DEPRECATIONS) {
+    if (!_emberMetalCore["default"].LOG_DEPRECATIONS) {
       return;
     }
     if (_emberMetalCore["default"].ENV.RAISE_ON_DEPRECATION) {

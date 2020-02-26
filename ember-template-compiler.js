@@ -223,7 +223,7 @@ enifed("ember-debug", ["exports", "ember-metal/core", "ember-metal/error", "embe
     @public
   */
   _emberMetalCore["default"].deprecate = function (message, test, options) {
-    if (!_emberMetalCore["default"].ENV.LOG_DEPRECATIONS) {
+    if (!_emberMetalCore["default"].LOG_DEPRECATIONS) {
       return;
     }
     if (_emberMetalCore["default"].ENV.RAISE_ON_DEPRECATION) {
@@ -3470,6 +3470,17 @@ enifed('ember-metal/core', ['exports'], function (exports) {
     @public
   */
   Ember.LOG_STACKTRACE_ON_DEPRECATION = Ember.ENV.LOG_STACKTRACE_ON_DEPRECATION !== false;
+
+  /**
+    The `LOG_DEPRECATIONS` property, when true, tells Ember to not log
+    any deprecation warnings.
+  
+    @property LOG_DEPRECATIONS
+    @type Boolean
+    @default true
+    @public
+  */
+  Ember.LOG_DEPRECATIONS = Ember.ENV.LOG_DEPRECATIONS !== false;
 
   /**
     The `SHIM_ES5` property, when true, tells Ember to add ECMAScript 5 Array

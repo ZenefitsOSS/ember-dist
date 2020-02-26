@@ -15616,6 +15616,17 @@ enifed('ember-metal/core', ['exports'], function (exports) {
   Ember.LOG_STACKTRACE_ON_DEPRECATION = Ember.ENV.LOG_STACKTRACE_ON_DEPRECATION !== false;
 
   /**
+    The `LOG_DEPRECATIONS` property, when true, tells Ember to not log
+    any deprecation warnings.
+  
+    @property LOG_DEPRECATIONS
+    @type Boolean
+    @default true
+    @public
+  */
+  Ember.LOG_DEPRECATIONS = Ember.ENV.LOG_DEPRECATIONS !== false;
+
+  /**
     The `SHIM_ES5` property, when true, tells Ember to add ECMAScript 5 Array
     shims to older browsers.
   
