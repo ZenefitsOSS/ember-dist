@@ -1,9 +1,25 @@
 {
-  "name": "ember-dist",
-  "version": "v1.13.10-zenefits.2",
-  "main": "index.js",
-  "repository": "git@github.com:zenefits/ember-dist.git",
-  "author": ".",
+  "name": "components-ember",
+  "version": "1.13.10-zenefits.3+18063622",
+  "description": "Ember Application Framework",
   "license": "MIT",
-  "description": "Build for a fork of Ember for Zenefits (git@github.com:zenefits/ember.js.git)"
+  "homepage": "https://github.com/emberjs/ember.js",
+  "keywords": [
+    "ember"
+  ],
+  "main": "./ember.debug.js",
+  "dependencies": {
+    "jquery": ">=1.7.0 < 2.2.0"
+  },
+  "jspm": {
+    "main": "ember.debug",
+    "shim": {
+      "ember.prod": { "deps": ["jquery"], "exports": "Ember" },
+      "ember.debug": { "deps": ["jquery"], "exports": "Ember" }
+    },
+    "registry": "jspm",
+    "dependencies": {
+      "jquery": "github:components/jquery@^2.1.3"
+    }
+  }
 }
